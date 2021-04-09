@@ -13,19 +13,19 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.joaob.emergencyinbabel.R;
-import com.joaob.emergencyinbabel.ui.viewmodel.DashboardViewModel;
+import com.joaob.emergencyinbabel.ui.viewmodel.CountriesViewModel;
 
-public class DashboardFragment extends Fragment {
+public class CountriesFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private CountriesViewModel countriesViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        countriesViewModel =
+                new ViewModelProvider(this).get(CountriesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_countries, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        countriesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

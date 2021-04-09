@@ -13,19 +13,19 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.joaob.emergencyinbabel.R;
-import com.joaob.emergencyinbabel.ui.viewmodel.NotificationsViewModel;
+import com.joaob.emergencyinbabel.ui.viewmodel.LanguagesViewModel;
 
-public class NotificationsFragment extends Fragment {
+public class LanguagesFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private LanguagesViewModel languagesViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+        languagesViewModel =
+                new ViewModelProvider(this).get(LanguagesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_languages, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        languagesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

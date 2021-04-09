@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.joaob.emergencyinbabel.ui.view.DashboardFragment"
+        android:name="com.joaob.emergencyinbabel.ui.view.CountriesFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_countries" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.joaob.emergencyinbabel.ui.view.NotificationsFragment"
+        android:name="com.joaob.emergencyinbabel.ui.view.LanguagesFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_languages" />
 </navigation>
