@@ -1,4 +1,4 @@
-package com.joaob.emergencyinbabel.ui.notifications;
+package com.joaob.emergencyinbabel.ui.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.joaob.emergencyinbabel.R;
+import com.joaob.emergencyinbabel.ui.viewmodel.NotificationsViewModel;
 
 public class NotificationsFragment extends Fragment {
 
