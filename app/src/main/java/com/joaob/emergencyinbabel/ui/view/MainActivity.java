@@ -1,8 +1,9 @@
-package com.joaob.emergencyinbabel;
+package com.joaob.emergencyinbabel.ui.view;
 
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.joaob.emergencyinbabel.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
