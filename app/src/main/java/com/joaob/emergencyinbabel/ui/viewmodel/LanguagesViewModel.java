@@ -10,5 +10,5 @@ public class LanguagesViewModel extends ViewModel {
 
     }
 
-    public LiveData<String> getText() { return null }
+    public LiveData<String> getText() { return null; }
 }

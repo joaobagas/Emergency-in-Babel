@@ -11,5 +11,5 @@ public class CountriesViewModel extends ViewModel {
 
     }
 
-    public LiveData<String> getText() { return null }
+    public LiveData<String> getText() { return null; }
 }

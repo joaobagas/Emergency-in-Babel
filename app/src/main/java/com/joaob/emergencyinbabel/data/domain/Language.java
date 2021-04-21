@@ -1,4 +1,4 @@
-package com.joaob.emergencyinbabel.data.model;
+package com.joaob.emergencyinbabel.data.domain;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

@@ -24,11 +24,10 @@ public class LanguagesFragment extends Fragment {
         languagesViewModel =
                 new ViewModelProvider(this).get(LanguagesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_languages, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
         languagesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+
             }
         });
         return root;
