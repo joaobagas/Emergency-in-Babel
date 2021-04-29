@@ -7,11 +7,11 @@ import androidx.room.PrimaryKey;
 public class Language {
     @PrimaryKey
     private String id;
-    private String language;
+    private String name;
 
     public Language(String id, String language) {
         this.id = id;
-        this.language = language;
+        this.name = name;
     }
 
     public String getId() {
@@ -22,11 +22,11 @@ public class Language {
         this.id = id;
     }
 
-    public String getLanguage() {
-        return language;
+    public String getName() {
+        return name;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setName(String language) {
+        this.name = language;
     }
 }
