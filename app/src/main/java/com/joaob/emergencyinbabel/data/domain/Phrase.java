@@ -1,8 +1,5 @@
 package com.joaob.emergencyinbabel.data.domain;
 
-import androidx.room.Entity;
-
-@Entity(tableName = "phrase_table")
 public class Phrase {
     private String languageID;
     private String phraseInEnglish;
@@ -17,24 +14,15 @@ public class Phrase {
     public String getLanguageID() {
         return languageID;
     }
-
     public void setLanguageID(String languageID) {
         this.languageID = languageID;
     }
-
     public String getPhraseInEnglish() {
         return phraseInEnglish;
     }
-
-    public void setPhraseInEnglish(String phraseInEnglish) {
-        this.phraseInEnglish = phraseInEnglish;
-    }
-
+    public void setPhraseInEnglish(String phraseInEnglish) { this.phraseInEnglish = phraseInEnglish; }
     public String getTranslatedPhrase() {
         return translatedPhrase;
     }
-
-    public void setTranslatedPhrase(String translatedPhrase) {
-        this.translatedPhrase = translatedPhrase;
-    }
+    public void setTranslatedPhrase(String translatedPhrase) { this.translatedPhrase = translatedPhrase; }
 }
