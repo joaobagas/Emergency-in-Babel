@@ -21,7 +21,7 @@ public class LanguageListAdapter extends RecyclerView.Adapter<LanguageListViewHo
     @Override
     public LanguageListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.fragment_item, parent, false); // I need to change the fragment
+        View view = inflater.inflate(R.layout.list_item_language, parent, false); // I need to change the fragment
         return new LanguageListViewHolder(view);
     }
 

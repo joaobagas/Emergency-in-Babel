@@ -5,17 +5,12 @@
     android:layout_height="wrap_content"
     android:background="#e4e4e4">
 
-    <ImageView
-        android:id="@+id/iv_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_list_black_24" />
-
     <TextView
         android:id="@+id/tv_name"
-        style="@style/ListText"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="75dp"
         android:layout_weight="1"
-        android:text="Fuck" />
+        android:text="Portuguese" />
+
 </LinearLayout>
+    <!--style="@style/PokemonName"-->
