@@ -6,17 +6,17 @@
     android:background="#e4e4e4">
 
     <ImageView
-        android:id="@+id/iv_icon"
+        android:id="@+id/countryIcon"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:src="@drawable/flag_portugal" />
 
     <TextView
-        android:id="@+id/tv_name"
+        style="@style/BigListText"
+        android:id="@+id/countryName"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="Portugal" />
 
 </LinearLayout>
-    <!--style="@style/PokemonName"-->
