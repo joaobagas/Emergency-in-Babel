@@ -1,27 +1,27 @@
 package com.joaob.emergencyinbabel.data.domain;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "language_table")
 public class Language {
-    @PrimaryKey
-    private String id;
-    private String countryName;
+    @PrimaryKey @NonNull
     private String name;
+    private String countryName;
 
-    public Language(String id, String countryName, String name) {
-        this.id = id;
-        this.countryName = countryName;
+    public Language(@NonNull String name, String countryName) {
         this.name = name;
+        this.countryName = countryName;
     }
 
-    public String getId() {
-        return id;
+    @NonNull
+    public String getName() {
+        return name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setName(@NonNull String name) {
+        this.name = name;
     }
 
     public String getCountryName() {
@@ -30,13 +30,5 @@ public class Language {
 
     public void setCountryName(String countryName) {
         this.countryName = countryName;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

@@ -4,25 +4,25 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.joaob.emergencyinbabel.R;
+import com.joaob.emergencyinbabel.ui.list.CountryListAdapter;
 import com.joaob.emergencyinbabel.ui.viewmodel.CountriesViewModel;
 
 public class CountriesFragment extends Fragment {
 
     private CountriesViewModel countriesViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        countriesViewModel =
-                new ViewModelProvider(this).get(CountriesViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        countriesViewModel = new ViewModelProvider(this).get(CountriesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_countries, container, false);
         countriesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -30,6 +30,7 @@ public class CountriesFragment extends Fragment {
 
             }
         });
+
         return root;
     }
 }

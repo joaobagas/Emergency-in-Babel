@@ -19,10 +19,8 @@ public class LanguagesFragment extends Fragment {
 
     private LanguagesViewModel languagesViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        languagesViewModel =
-                new ViewModelProvider(this).get(LanguagesViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        languagesViewModel = new ViewModelProvider(this).get(LanguagesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_languages, container, false);
         languagesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
