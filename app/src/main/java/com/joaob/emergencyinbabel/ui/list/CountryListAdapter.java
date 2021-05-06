@@ -21,7 +21,7 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListViewHold
     @Override
     public CountryListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.list_item_country, parent, false); // I need to change the fragment
+        View view = inflater.inflate(R.layout.list_item_country, parent, false);
         return new CountryListViewHolder(view);
     }
 

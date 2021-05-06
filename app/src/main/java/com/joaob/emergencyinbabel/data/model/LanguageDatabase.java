@@ -6,9 +6,9 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.joaob.emergencyinbabel.data.domain.Country;
+import com.joaob.emergencyinbabel.data.domain.Language;
 
-@Database(entities = {Country.class}, version = 1)
+@Database(entities = {Language.class}, version = 1, exportSchema = false)
 public abstract class LanguageDatabase extends RoomDatabase {
     private static LanguageDatabase instance;
     public abstract LanguageDAO languageDAO();

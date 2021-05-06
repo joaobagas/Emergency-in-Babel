@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 import com.joaob.emergencyinbabel.data.domain.Country;
 
-@Database(entities = {Country.class}, version = 1)
+@Database(entities = {Country.class}, version = 1, exportSchema = false)
 public abstract class CountryDatabase extends RoomDatabase {
     private static CountryDatabase instance;
     public abstract CountryDAO countryDAO();

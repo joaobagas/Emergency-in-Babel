@@ -11,9 +11,9 @@ import java.util.List;
 public class Country {
     @PrimaryKey @NonNull
     private String name;
-    private String iconID;
+    private int iconID;
 
-    public Country(@NonNull String name, String iconID) {
+    public Country(@NonNull String name, int iconID) {
         this.name = name;
         this.iconID = iconID;
     }
@@ -27,11 +27,11 @@ public class Country {
         this.name = name;
     }
 
-    public String getIconID() {
+    public int getIconID() {
         return iconID;
     }
 
-    public void setIconID(String iconID) {
+    public void setIconID(int iconID) {
         this.iconID = iconID;
     }
 }
