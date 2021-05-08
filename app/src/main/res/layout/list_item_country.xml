@@ -3,7 +3,13 @@
     android:id="@+id/countryContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#e4e4e4">
+    android:layout_gravity="center"
+    android:background="@drawable/round_outline"
+    android:backgroundTint="#888888"
+    android:elevation="3dp"
+    android:paddingHorizontal="20dp"
+    android:radius="200dp"
+    android:layout_margin="10dp">
 
     <ImageView
         android:id="@+id/countryIcon"
@@ -12,8 +18,8 @@
         android:src="@drawable/flag_portugal" />
 
     <TextView
-        style="@style/BigListText"
         android:id="@+id/countryName"
+        style="@style/BigListText"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"

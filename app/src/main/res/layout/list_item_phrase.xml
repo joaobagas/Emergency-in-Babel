@@ -3,7 +3,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#e4e4e4">
+    android:background="#888888">
 
     <TextView
         android:id="@+id/englishPhrase"
@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="75dp"
         android:layout_weight="1"
-        android:text="Help" />
+        android:text="Help"/>
 
     <TextView
         android:id="@+id/translatedPhrase"
@@ -22,4 +22,3 @@
         android:text="Ajuda" />
 
 </LinearLayout>
-    <!--style="@style/PokemonName"-->

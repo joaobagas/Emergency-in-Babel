@@ -3,7 +3,9 @@
     android:id="@+id/languageContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#e4e4e4">
+    android:background="@drawable/round_outline"
+    android:backgroundTint="#888888"
+    android:layout_margin="10dp">
 
     <TextView
         android:id="@+id/languageName"
