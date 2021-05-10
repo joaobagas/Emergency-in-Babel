@@ -30,19 +30,7 @@ public class LanguagesFragment extends Fragment {
         languagesViewModel = new ViewModelProvider(this).get(LanguagesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_languages, container, false);
 
-        ArrayList<Language> languages = new ArrayList<>();
-        languages.add(new Language("Portuguese", "Portugal"));
-        languages.add(new Language("Danish", "Denmark"));
-        languages.add(new Language("French", "France"));
-        languages.add(new Language("Portuguese", "Portugal"));
-        languages.add(new Language("Danish", "Denmark"));
-        languages.add(new Language("French", "France"));
-        languages.add(new Language("Portuguese", "Portugal"));
-        languages.add(new Language("Danish", "Denmark"));
-        languages.add(new Language("French", "France"));
-        languages.add(new Language("Portuguese", "Portugal"));
-        languages.add(new Language("Danish", "Denmark"));
-        languages.add(new Language("French", "France"));
+        ArrayList<Language> languages = (ArrayList<Language>) languagesViewModel.getLanguages().getValue();
 
         languageRecyclerView = (RecyclerView) root.findViewById(R.id.language_rv);
         languageRecyclerView.hasFixedSize();

@@ -4,6 +4,7 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
+import com.joaob.emergencyinbabel.data.api.TranslationAPI;
 import com.joaob.emergencyinbabel.data.domain.Country;
 import com.joaob.emergencyinbabel.data.domain.Language;
 import com.joaob.emergencyinbabel.data.model.CountryDAO;
@@ -16,6 +17,7 @@ public class Repository {
     private static Repository instance;
     private CountryDAO countryDAO;
     private LanguageDAO languageDAO;
+    private TranslationAPI translationAPI;
     private LiveData<List<Country>> countries;
     private LiveData<List<Language>> languages;
     private LocalApplicationDatabase localApplicationDatabase;
@@ -33,7 +35,6 @@ public class Repository {
             instance = new Repository(application);
         return instance;
     }
-
 
     public LiveData<List<Country>> getAllCountries() { return countries; }
     public LiveData<List<Language>> getAllLanguages() { return languages; }

@@ -16,7 +16,6 @@ public class HomeViewModel extends AndroidViewModel {
     public HomeViewModel(Application app) {
         super(app);
         repository = Repository.getInstance(app);
-
         mText = new MutableLiveData<>();
         mText.setValue("Welcome to Emergency in Babel\n" +
                 "It seems like you are in:");

@@ -26,7 +26,7 @@ public class LanguageListAdapter extends RecyclerView.Adapter<LanguageListViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LanguageListViewHolder holder, int position) { holder.getName().setText(languages.get(position).getName()); }
+    public void onBindViewHolder(@NonNull LanguageListViewHolder holder, int position) { holder.getName().setText(languages.get(position).getLanguageName()); }
 
     @Override
     public int getItemCount() { return languages.size(); }

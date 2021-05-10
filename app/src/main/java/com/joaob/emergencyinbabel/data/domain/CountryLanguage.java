@@ -4,19 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Entity(tableName = "country_table")
-public class Country {
+@Entity(tableName = "country_language_table")
+public class CountryLanguage {
     @PrimaryKey @NonNull
     private String countryID;
     @NonNull
-    private String countryName;
+    private String languageID;
 
-    public Country(@NonNull String countryID, @NonNull String countryName) {
+    public CountryLanguage(@NonNull String countryID, @NonNull String languageID) {
         this.countryID = countryID;
-        this.countryName = countryName;
+        this.languageID = languageID;
     }
 
     @NonNull
@@ -29,11 +26,11 @@ public class Country {
     }
 
     @NonNull
-    public String getCountryName() {
-        return countryName;
+    public String getLanguageID() {
+        return languageID;
     }
 
-    public void setCountryName(@NonNull String countryName) {
-        this.countryName = countryName;
+    public void setLanguageID(@NonNull String languageID) {
+        this.languageID = languageID;
     }
 }

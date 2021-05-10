@@ -17,6 +17,6 @@ public interface LanguageDAO {
     @Query("SELECT * FROM language_table")
     LiveData<List<Language>> getLanguages();
 
-    @Query("SELECT * FROM language_table WHERE countryName == :countryName")
-    LiveData<List<Language>> getLanguagesFromCountry(String countryName);
+    @Query("SELECT * FROM language_table WHERE languageID == :languageID")
+    LiveData<List<Language>> getLanguagesFromCountry(String languageID);
 }

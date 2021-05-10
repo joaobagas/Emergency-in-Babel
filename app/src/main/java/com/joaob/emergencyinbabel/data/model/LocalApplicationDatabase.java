@@ -7,12 +7,14 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.joaob.emergencyinbabel.data.domain.Country;
+import com.joaob.emergencyinbabel.data.domain.CountryLanguage;
 import com.joaob.emergencyinbabel.data.domain.Language;
 
-@Database(entities = {Country.class, Language.class}, version = 1, exportSchema = false)
+@Database(entities = {Country.class, CountryLanguage.class, Language.class}, version = 1, exportSchema = false)
 public abstract class LocalApplicationDatabase extends RoomDatabase {
     private static LocalApplicationDatabase instance;
     public abstract CountryDAO countryDAO();
+    public abstract CountryLanguageDAO countryLanguageDAO();
     public abstract LanguageDAO languageDAO();
 
 
@@ -20,7 +22,7 @@ public abstract class LocalApplicationDatabase extends RoomDatabase {
         if(instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
                     LocalApplicationDatabase.class, "local_application_database")
-                    .fallbackToDestructiveMigration()
+                    .createFromAsset("local_application_database.db.sql")
                     .build();
         }
         return instance;

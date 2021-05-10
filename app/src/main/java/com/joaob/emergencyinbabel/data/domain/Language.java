@@ -7,28 +7,30 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "language_table")
 public class Language {
     @PrimaryKey @NonNull
-    private String name;
-    private String countryName;
+    private String languageID;
+    @NonNull
+    private String languageName;
 
-    public Language(@NonNull String name, String countryName) {
-        this.name = name;
-        this.countryName = countryName;
+    public Language(@NonNull String languageID, @NonNull String languageName) {
+        this.languageID = languageID;
+        this.languageName = languageName;
     }
 
     @NonNull
-    public String getName() {
-        return name;
+    public String getLanguageID() {
+        return languageID;
     }
 
-    public void setName(@NonNull String name) {
-        this.name = name;
+    public void setLanguageID(@NonNull String languageID) {
+        this.languageID = languageID;
     }
 
-    public String getCountryName() {
-        return countryName;
+    @NonNull
+    public String getLanguageName() {
+        return languageName;
     }
 
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setLanguageName(@NonNull String languageName) {
+        this.languageName = languageName;
     }
 }

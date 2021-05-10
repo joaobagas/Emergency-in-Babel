@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.joaob.emergencyinbabel.R;
 import com.joaob.emergencyinbabel.data.domain.Country;
+import com.joaob.emergencyinbabel.data.domain.Language;
 import com.joaob.emergencyinbabel.ui.list.CountryListAdapter;
 import com.joaob.emergencyinbabel.ui.viewmodel.CountriesViewModel;
 
@@ -29,19 +30,7 @@ public class CountriesFragment extends Fragment {
         countriesViewModel = new ViewModelProvider(this).get(CountriesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_countries, container, false);
 
-        ArrayList<Country> countries = new ArrayList<>();
-        countries.add(new Country("Portugal", R.drawable.flag_portugal));
-        countries.add(new Country("Denmark", R.drawable.flag_denmark));
-        countries.add(new Country("France", R.drawable.flag_france));
-        countries.add(new Country("Portugal", R.drawable.flag_portugal));
-        countries.add(new Country("Denmark", R.drawable.flag_denmark));
-        countries.add(new Country("France", R.drawable.flag_france));
-        countries.add(new Country("Portugal", R.drawable.flag_portugal));
-        countries.add(new Country("Denmark", R.drawable.flag_denmark));
-        countries.add(new Country("France", R.drawable.flag_france));
-        countries.add(new Country("Portugal", R.drawable.flag_portugal));
-        countries.add(new Country("Denmark", R.drawable.flag_denmark));
-        countries.add(new Country("France", R.drawable.flag_france));
+        ArrayList<Country> countries = (ArrayList<Country>) countriesViewModel.getCountries().getValue();;
 
         countryRecyclerView = (RecyclerView) root.findViewById(R.id.country_rv);
         countryRecyclerView.hasFixedSize();

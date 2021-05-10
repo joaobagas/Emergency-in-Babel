@@ -27,8 +27,8 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListViewHold
 
     @Override
     public void onBindViewHolder(@NonNull CountryListViewHolder holder, int position) {
-        holder.getIcon().setImageResource(countries.get(position).getIconID());
-        holder.getName().setText(countries.get(position).getName());
+        //holder.getIcon().setImageResource(countries.get(position).getIconID());
+        holder.getName().setText(countries.get(position).getCountryName());
     }
 
     @Override
