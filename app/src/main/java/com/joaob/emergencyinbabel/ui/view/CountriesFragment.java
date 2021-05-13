@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,7 +22,7 @@ import com.joaob.emergencyinbabel.ui.viewmodel.CountriesViewModel;
 
 import java.util.ArrayList;
 
-public class CountriesFragment extends Fragment {
+public class CountriesFragment extends Fragment implements CountryListAdapter.OnListItemClickListener {
     private CountriesViewModel countriesViewModel;
     private RecyclerView countryRecyclerView;
     private CountryListAdapter countryListAdapter;
@@ -35,9 +36,14 @@ public class CountriesFragment extends Fragment {
         countryRecyclerView = (RecyclerView) root.findViewById(R.id.country_rv);
         countryRecyclerView.hasFixedSize();
         countryRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        countryListAdapter = new CountryListAdapter(countries);
+        countryListAdapter = new CountryListAdapter(countries, this);
         countryRecyclerView.setAdapter(countryListAdapter);
 
         return root;
+    }
+
+    @Override
+    public void onListItemClick(int clickedItemIndex) {
+        Toast.makeText(getContext().getApplicationContext(), "Test country", Toast.LENGTH_SHORT).show();
     }
 }

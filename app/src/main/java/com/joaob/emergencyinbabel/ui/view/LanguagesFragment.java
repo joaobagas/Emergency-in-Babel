@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 
 import io.reactivex.schedulers.Schedulers;
 
-public class LanguagesFragment extends Fragment {
+public class LanguagesFragment extends Fragment implements LanguageListAdapter.OnListItemClickListener {
     private LanguagesViewModel languagesViewModel;
     private RecyclerView languageRecyclerView;
     private LanguageListAdapter languageListAdapter;
@@ -38,9 +39,14 @@ public class LanguagesFragment extends Fragment {
         languageRecyclerView = (RecyclerView) root.findViewById(R.id.language_rv);
         languageRecyclerView.hasFixedSize();
         languageRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        languageListAdapter = new LanguageListAdapter(languages);
+        languageListAdapter = new LanguageListAdapter(languages, this);
         languageRecyclerView.setAdapter(languageListAdapter);
 
         return root;
+    }
+
+    @Override
+    public void onListItemClick(int clickedItemIndex) {
+        Toast.makeText(getContext().getApplicationContext(), "Test language", Toast.LENGTH_SHORT).show();
     }
 }

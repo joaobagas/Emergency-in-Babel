@@ -3,6 +3,7 @@ package com.joaob.emergencyinbabel.ui.list;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,7 +13,7 @@ import com.joaob.emergencyinbabel.data.domain.Phrase;
 
 import java.util.ArrayList;
 
-public class PhraseListAdapter extends RecyclerView.Adapter<PhraseListViewHolder> {
+public class PhraseListAdapter extends RecyclerView.Adapter<PhraseListAdapter.PhraseListViewHolder> {
     private ArrayList<Phrase> phrases;
 
     public PhraseListAdapter(ArrayList<Phrase> phrases) { this.phrases = phrases; }
@@ -33,4 +34,18 @@ public class PhraseListAdapter extends RecyclerView.Adapter<PhraseListViewHolder
 
     @Override
     public int getItemCount() { return phrases.size(); }
+
+    public class PhraseListViewHolder extends RecyclerView.ViewHolder {
+        private TextView englishPhrase;
+        private TextView translatedPhrase;
+
+        public PhraseListViewHolder(@NonNull View itemView) {
+            super(itemView);
+            englishPhrase = null;
+            translatedPhrase = null;
+        }
+
+        public TextView getEnglishSentence() { return englishPhrase; }
+        public TextView getTranslatedSentence() { return translatedPhrase; }
+    }
 }

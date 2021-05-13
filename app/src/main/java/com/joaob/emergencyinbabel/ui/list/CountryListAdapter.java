@@ -1,11 +1,11 @@
 package com.joaob.emergencyinbabel.ui.list;
 
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,10 +14,15 @@ import com.joaob.emergencyinbabel.data.domain.Country;
 
 import java.util.ArrayList;
 
-public class CountryListAdapter extends RecyclerView.Adapter<CountryListViewHolder> {
+public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.CountryListViewHolder> {
     private ArrayList<Country> countries;
+    private final OnListItemClickListener mOnListItemClickListener;
 
-    public CountryListAdapter(ArrayList<Country> countries) { this.countries = countries; }
+
+    public CountryListAdapter(ArrayList<Country> countries, OnListItemClickListener listener) {
+        this.countries = countries;
+        this.mOnListItemClickListener = listener;
+    }
 
     @NonNull
     @Override
@@ -35,6 +40,28 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListViewHold
 
     @Override
     public int getItemCount() { return countries.size(); }
+
+    public interface OnListItemClickListener { void onListItemClick(int clickedItemIndex); }
+
+    public class CountryListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private ImageView icon;
+        private TextView name;
+
+        public CountryListViewHolder(@NonNull View itemView) {
+            super(itemView);
+            icon = itemView.findViewById(R.id.countryIcon);
+            name = itemView.findViewById(R.id.countryName);
+            itemView.setOnClickListener(this);
+        }
+
+        public ImageView getIcon() { return icon; }
+        public TextView getName() { return name; }
+
+        @Override
+        public void onClick(View v) {
+            mOnListItemClickListener.onListItemClick(getAdapterPosition());
+        }
+    }
 
     private int getDrawable(String countryID) {
         switch (countryID) {
