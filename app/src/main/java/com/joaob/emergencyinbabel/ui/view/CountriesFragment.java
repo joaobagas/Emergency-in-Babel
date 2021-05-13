@@ -30,7 +30,7 @@ public class CountriesFragment extends Fragment {
         countriesViewModel = new ViewModelProvider(this).get(CountriesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_countries, container, false);
 
-        ArrayList<Country> countries = (ArrayList<Country>) countriesViewModel.getCountries().getValue();;
+        ArrayList<Country> countries = (ArrayList<Country>) countriesViewModel.getCountries().blockingFirst();
 
         countryRecyclerView = (RecyclerView) root.findViewById(R.id.country_rv);
         countryRecyclerView.hasFixedSize();

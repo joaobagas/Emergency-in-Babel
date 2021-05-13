@@ -21,16 +21,19 @@ import com.joaob.emergencyinbabel.ui.viewmodel.LanguagesViewModel;
 
 import java.util.ArrayList;
 
+import io.reactivex.schedulers.Schedulers;
+
 public class LanguagesFragment extends Fragment {
     private LanguagesViewModel languagesViewModel;
     private RecyclerView languageRecyclerView;
     private LanguageListAdapter languageListAdapter;
+    private ArrayList<Language> languages;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         languagesViewModel = new ViewModelProvider(this).get(LanguagesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_languages, container, false);
 
-        ArrayList<Language> languages = (ArrayList<Language>) languagesViewModel.getLanguages().getValue();
+        languages = (ArrayList<Language>) languagesViewModel.getLanguages().blockingFirst();
 
         languageRecyclerView = (RecyclerView) root.findViewById(R.id.language_rv);
         languageRecyclerView.hasFixedSize();

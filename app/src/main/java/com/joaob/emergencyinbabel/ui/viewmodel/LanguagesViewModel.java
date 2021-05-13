@@ -12,17 +12,17 @@ import com.joaob.emergencyinbabel.data.repository.Repository;
 
 import java.util.List;
 
+import io.reactivex.Flowable;
+
 public class LanguagesViewModel extends AndroidViewModel {
     private Repository repository;
-    private LiveData<List<Language>> languages;
 
     public LanguagesViewModel(Application app) {
         super(app);
         repository = Repository.getInstance(app);
-        languages = repository.getAllLanguages();
     }
 
-    public LiveData<List<Language>> getLanguages() {
-        return languages;
+    public Flowable<List<Language>> getLanguages() {
+        return repository.getAllLanguages();
     }
 }

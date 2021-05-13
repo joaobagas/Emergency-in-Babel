@@ -12,17 +12,17 @@ import com.joaob.emergencyinbabel.data.repository.Repository;
 
 import java.util.List;
 
+import io.reactivex.Flowable;
+
 public class CountriesViewModel extends AndroidViewModel {
     private Repository repository;
-    private LiveData<List<Country>> countries;
 
     public CountriesViewModel(Application app) {
         super(app);
         repository = Repository.getInstance(app);
-        countries = repository.getAllCountries();
     }
 
-    public LiveData<List<Country>> getCountries() {
-        return countries;
+    public Flowable<List<Country>> getCountries() {
+        return repository.getAllCountries();
     }
 }

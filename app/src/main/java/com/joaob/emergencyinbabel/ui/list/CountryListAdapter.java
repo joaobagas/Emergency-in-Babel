@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,10 +28,17 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListViewHold
 
     @Override
     public void onBindViewHolder(@NonNull CountryListViewHolder holder, int position) {
-        //holder.getIcon().setImageResource(countries.get(position).getIconID());
+        holder.getIcon().setImageResource(R.drawable.flag_portugal);
         holder.getName().setText(countries.get(position).getCountryName());
     }
 
     @Override
     public int getItemCount() { return countries.size(); }
+
+    private int getDrawable(String countryID) {
+        switch (countryID) {
+
+        }
+        return 1;
+    }
 }

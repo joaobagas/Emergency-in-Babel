@@ -1,9 +1,4 @@
 BEGIN TRANSACTION;
-CREATE TABLE IF NOT EXISTS "language_country_table" (
-	"countryID"	TEXT NOT NULL,
-	"languageID"	TEXT NOT NULL,
-	PRIMARY KEY("languageID","countryID")
-);
 CREATE TABLE IF NOT EXISTS "country_table" (
 	"countryID"	TEXT NOT NULL,
 	"countryName"	TEXT NOT NULL,
@@ -14,36 +9,11 @@ CREATE TABLE IF NOT EXISTS "language_table" (
 	"languageName"	TEXT NOT NULL,
 	PRIMARY KEY("languageID")
 );
-INSERT INTO "language_country_table" VALUES ('au','ge');
-INSERT INTO "language_country_table" VALUES ('be','du');
-INSERT INTO "language_country_table" VALUES ('be','fr');
-INSERT INTO "language_country_table" VALUES ('be','ge');
-INSERT INTO "language_country_table" VALUES ('bu','bu');
-INSERT INTO "language_country_table" VALUES ('cr','cr');
-INSERT INTO "language_country_table" VALUES ('cy','gr');
-INSERT INTO "language_country_table" VALUES ('dk','de');
-INSERT INTO "language_country_table" VALUES ('es','es');
-INSERT INTO "language_country_table" VALUES ('fi','fi');
-INSERT INTO "language_country_table" VALUES ('fr','fr');
-INSERT INTO "language_country_table" VALUES ('ge','ge');
-INSERT INTO "language_country_table" VALUES ('gr','gr');
-INSERT INTO "language_country_table" VALUES ('hu','hu');
-INSERT INTO "language_country_table" VALUES ('ir','fr');
-INSERT INTO "language_country_table" VALUES ('it','it');
-INSERT INTO "language_country_table" VALUES ('la','la');
-INSERT INTO "language_country_table" VALUES ('li','li');
-INSERT INTO "language_country_table" VALUES ('lu','fr');
-INSERT INTO "language_country_table" VALUES ('lu','lu');
-INSERT INTO "language_country_table" VALUES ('lu','ge');
-INSERT INTO "language_country_table" VALUES ('ma','ma');
-INSERT INTO "language_country_table" VALUES ('ne','du');
-INSERT INTO "language_country_table" VALUES ('po','po');
-INSERT INTO "language_country_table" VALUES ('pt','pt');
-INSERT INTO "language_country_table" VALUES ('ro','ro');
-INSERT INTO "language_country_table" VALUES ('sk','sk');
-INSERT INTO "language_country_table" VALUES ('sl','sl');
-INSERT INTO "language_country_table" VALUES ('sp','sp');
-INSERT INTO "language_country_table" VALUES ('sw','sw');
+CREATE TABLE IF NOT EXISTS "country_language_table" (
+	"countryID"	TEXT NOT NULL,
+	"languageID"	TEXT NOT NULL,
+	PRIMARY KEY("languageID","countryID")
+);
 INSERT INTO "country_table" VALUES ('au','Austria');
 INSERT INTO "country_table" VALUES ('be','Belgium');
 INSERT INTO "country_table" VALUES ('bu','Bulgaria');
@@ -96,4 +66,34 @@ INSERT INTO "language_table" VALUES ('sk','Slovak');
 INSERT INTO "language_table" VALUES ('sl','Slovene');
 INSERT INTO "language_table" VALUES ('sp','Spanish');
 INSERT INTO "language_table" VALUES ('sw','Swedish');
+INSERT INTO "country_language_table" VALUES ('au','ge');
+INSERT INTO "country_language_table" VALUES ('be','du');
+INSERT INTO "country_language_table" VALUES ('be','fr');
+INSERT INTO "country_language_table" VALUES ('be','ge');
+INSERT INTO "country_language_table" VALUES ('bu','bu');
+INSERT INTO "country_language_table" VALUES ('cr','cr');
+INSERT INTO "country_language_table" VALUES ('cy','gr');
+INSERT INTO "country_language_table" VALUES ('dk','de');
+INSERT INTO "country_language_table" VALUES ('es','es');
+INSERT INTO "country_language_table" VALUES ('fi','fi');
+INSERT INTO "country_language_table" VALUES ('fr','fr');
+INSERT INTO "country_language_table" VALUES ('ge','ge');
+INSERT INTO "country_language_table" VALUES ('gr','gr');
+INSERT INTO "country_language_table" VALUES ('hu','hu');
+INSERT INTO "country_language_table" VALUES ('ir','fr');
+INSERT INTO "country_language_table" VALUES ('it','it');
+INSERT INTO "country_language_table" VALUES ('la','la');
+INSERT INTO "country_language_table" VALUES ('li','li');
+INSERT INTO "country_language_table" VALUES ('lu','fr');
+INSERT INTO "country_language_table" VALUES ('lu','lu');
+INSERT INTO "country_language_table" VALUES ('lu','ge');
+INSERT INTO "country_language_table" VALUES ('ma','ma');
+INSERT INTO "country_language_table" VALUES ('ne','du');
+INSERT INTO "country_language_table" VALUES ('po','po');
+INSERT INTO "country_language_table" VALUES ('pt','pt');
+INSERT INTO "country_language_table" VALUES ('ro','ro');
+INSERT INTO "country_language_table" VALUES ('sk','sk');
+INSERT INTO "country_language_table" VALUES ('sl','sl');
+INSERT INTO "country_language_table" VALUES ('sp','sp');
+INSERT INTO "country_language_table" VALUES ('sw','sw');
 COMMIT;

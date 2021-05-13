@@ -10,11 +10,13 @@ import com.joaob.emergencyinbabel.data.domain.Country;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.Flowable;
+
 @Dao
 public interface CountryDAO {
     @Insert
     void insertCountry(Country country);
 
     @Query("SELECT * FROM country_table")
-    LiveData<List<Country>> getCountries();
+    Flowable<List<Country>> getCountries();
 }
