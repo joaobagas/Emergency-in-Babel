@@ -40,6 +40,7 @@ public class Repository {
     }
 
     public Flowable<List<Country>> getAllCountries() { return countryDAO.getCountries(); }
-    public Flowable<List<CountryLanguage>> getCountryLanguage() { return countryLanguageDAO.getCountryLanguage(); }
+    public Flowable<List<String>> getCountryLanguage(String countryID) { return countryLanguageDAO.getCountryLanguage(countryID); }
     public Flowable<List<Language>> getAllLanguages() { return languageDAO.getLanguages(); }
+    public Flowable<Language> getSelectedLanguage(String languageID) { return languageDAO.getSelectedLanguage(languageID); }
 }

@@ -26,12 +26,6 @@ public abstract class LocalApplicationDatabase extends RoomDatabase {
                     LocalApplicationDatabase.class, "local_application_database.db")
                     .createFromAsset("local_application_database.db").fallbackToDestructiveMigration()
                     .build();
-            /*
-            instance = Room.databaseBuilder(context.getApplicationContext(),
-                    LocalApplicationDatabase.class, "local_application_database.db")
-                    .fallbackToDestructiveMigration().addCallback(roomCallBack)
-                    .build();*/
-
         }
         return instance;
     }

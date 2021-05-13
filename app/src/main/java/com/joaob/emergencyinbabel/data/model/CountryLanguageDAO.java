@@ -11,6 +11,6 @@ import io.reactivex.Flowable;
 
 @Dao
 public interface CountryLanguageDAO {
-    @Query("SELECT * FROM country_language_table;")
-    Flowable<List<CountryLanguage>> getCountryLanguage();
+    @Query("SELECT languageID FROM country_language_table WHERE countryID = :countryID;")
+    Flowable<List<String>> getCountryLanguage(String countryID);
 }

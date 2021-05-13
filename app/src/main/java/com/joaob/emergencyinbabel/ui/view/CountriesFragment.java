@@ -24,6 +24,7 @@ import com.joaob.emergencyinbabel.ui.viewmodel.CountriesViewModel;
 import java.util.ArrayList;
 
 public class CountriesFragment extends Fragment implements CountryListAdapter.OnListItemClickListener {
+    private ArrayList<Country> countries;
     private CountriesViewModel countriesViewModel;
     private RecyclerView countryRecyclerView;
     private CountryListAdapter countryListAdapter;
@@ -32,7 +33,7 @@ public class CountriesFragment extends Fragment implements CountryListAdapter.On
         countriesViewModel = new ViewModelProvider(this).get(CountriesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_countries, container, false);
 
-        ArrayList<Country> countries = (ArrayList<Country>) countriesViewModel.getCountries().blockingFirst();
+        countries = (ArrayList<Country>) countriesViewModel.getCountries().blockingFirst();
 
         countryRecyclerView = (RecyclerView) root.findViewById(R.id.country_rv);
         countryRecyclerView.hasFixedSize();
@@ -45,9 +46,8 @@ public class CountriesFragment extends Fragment implements CountryListAdapter.On
 
     @Override
     public void onListItemClick(int clickedItemIndex) {
-        ArrayList<Country> countries = (ArrayList<Country>) countriesViewModel.getCountries().blockingFirst();
         Intent intent = new Intent(this.getContext(), CountrySelectedActivity.class);
-        intent.putExtra("country",countries.get(clickedItemIndex).getCountryID());
+        intent.putExtra("countryID", countries.get(clickedItemIndex).getCountryID());
         startActivity(intent);
     }
 }

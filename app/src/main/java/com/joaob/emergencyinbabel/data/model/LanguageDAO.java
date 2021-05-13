@@ -20,5 +20,5 @@ public interface LanguageDAO {
     Flowable<List<Language>> getLanguages();
 
     @Query("SELECT * FROM language_table WHERE languageID == :languageID;")
-    Flowable<List<Language>> getLanguagesFromCountry(String languageID);
+    Flowable<Language> getSelectedLanguage(String languageID);
 }
