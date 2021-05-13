@@ -1,5 +1,6 @@
 package com.joaob.emergencyinbabel.ui.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +45,9 @@ public class CountriesFragment extends Fragment implements CountryListAdapter.On
 
     @Override
     public void onListItemClick(int clickedItemIndex) {
-        Toast.makeText(getContext().getApplicationContext(), "Test country", Toast.LENGTH_SHORT).show();
+        ArrayList<Country> countries = (ArrayList<Country>) countriesViewModel.getCountries().blockingFirst();
+        Intent intent = new Intent(this.getContext(), CountrySelectedActivity.class);
+        intent.putExtra("country",countries.get(clickedItemIndex).getCountryID());
+        startActivity(intent);
     }
 }

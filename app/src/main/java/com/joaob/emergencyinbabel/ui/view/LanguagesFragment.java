@@ -1,5 +1,6 @@
 package com.joaob.emergencyinbabel.ui.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.joaob.emergencyinbabel.R;
+import com.joaob.emergencyinbabel.data.domain.Country;
 import com.joaob.emergencyinbabel.data.domain.Language;
 import com.joaob.emergencyinbabel.ui.list.LanguageListAdapter;
 import com.joaob.emergencyinbabel.ui.viewmodel.LanguagesViewModel;
@@ -47,6 +49,9 @@ public class LanguagesFragment extends Fragment implements LanguageListAdapter.O
 
     @Override
     public void onListItemClick(int clickedItemIndex) {
-        Toast.makeText(getContext().getApplicationContext(), "Test language", Toast.LENGTH_SHORT).show();
+        ArrayList<Language> languages = (ArrayList<Language>) languagesViewModel.getLanguages().blockingFirst();
+        Intent intent = new Intent(this.getContext(), PhraseActivity.class);
+        intent.putExtra("language", languages.get(clickedItemIndex).getLanguageID());
+        startActivity(intent);
     }
 }
