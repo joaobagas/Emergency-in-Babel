@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.joaob.emergencyinbabel.R;
@@ -41,6 +42,8 @@ public class CountrySelectedActivity extends AppCompatActivity implements Langua
 
     @Override
     public void onListItemClick(int clickedItemIndex) {
-
+        Intent intent = new Intent(getApplicationContext(), PhraseActivity.class);
+        intent.putExtra("languageID", languages.get(clickedItemIndex).getLanguageID());
+        startActivity(intent);
     }
 }

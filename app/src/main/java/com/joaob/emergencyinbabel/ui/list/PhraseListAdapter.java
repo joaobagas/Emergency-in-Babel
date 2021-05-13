@@ -41,8 +41,8 @@ public class PhraseListAdapter extends RecyclerView.Adapter<PhraseListAdapter.Ph
 
         public PhraseListViewHolder(@NonNull View itemView) {
             super(itemView);
-            englishPhrase = null;
-            translatedPhrase = null;
+            englishPhrase = itemView.findViewById(R.id.englishPhrase);
+            translatedPhrase = itemView.findViewById(R.id.translatedPhrase);
         }
 
         public TextView getEnglishSentence() { return englishPhrase; }

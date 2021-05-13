@@ -49,9 +49,8 @@ public class LanguagesFragment extends Fragment implements LanguageListAdapter.O
 
     @Override
     public void onListItemClick(int clickedItemIndex) {
-        ArrayList<Language> languages = (ArrayList<Language>) languagesViewModel.getLanguages().blockingFirst();
         Intent intent = new Intent(this.getContext(), PhraseActivity.class);
-        intent.putExtra("language", languages.get(clickedItemIndex).getLanguageID());
+        intent.putExtra("languageID", languages.get(clickedItemIndex).getLanguageID());
         startActivity(intent);
     }
 }
