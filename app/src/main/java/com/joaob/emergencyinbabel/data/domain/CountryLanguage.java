@@ -2,11 +2,12 @@ package com.joaob.emergencyinbabel.data.domain;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "country_language_table")
+@Entity(primaryKeys = {"countryID", "languageID"}, tableName = "country_language_table")
 public class CountryLanguage {
-    @PrimaryKey @NonNull
+    @NonNull
     private String countryID;
     @NonNull
     private String languageID;
