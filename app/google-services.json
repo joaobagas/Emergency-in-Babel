@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "782425289811",
+    "project_id": "and-emergency-in-babel",
+    "storage_bucket": "and-emergency-in-babel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782425289811:android:4b4e7b143e46c6e03fc2a6",
+        "android_client_info": {
+          "package_name": "com.joaob.emergencyinbabel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782425289811-qfmkopt46ev5804i0008ha7u2fmaopbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsVJLHoz7hK1UK_tMK-YlAnnehj4pyT5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782425289811-qfmkopt46ev5804i0008ha7u2fmaopbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

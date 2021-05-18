@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.joaob.emergencyinbabel.data.api.PhraseLiveData;
 import com.joaob.emergencyinbabel.data.api.TranslationAPI;
 import com.joaob.emergencyinbabel.data.domain.Country;
 import com.joaob.emergencyinbabel.data.domain.CountryLanguage;
@@ -43,4 +44,5 @@ public class Repository {
     public Flowable<List<String>> getCountryLanguage(String countryID) { return countryLanguageDAO.getCountryLanguage(countryID); }
     public Flowable<List<Language>> getAllLanguages() { return languageDAO.getLanguages(); }
     public Flowable<Language> getSelectedLanguage(String languageID) { return languageDAO.getSelectedLanguage(languageID); }
+    public PhraseLiveData getPhrases() { return null; }
 }
