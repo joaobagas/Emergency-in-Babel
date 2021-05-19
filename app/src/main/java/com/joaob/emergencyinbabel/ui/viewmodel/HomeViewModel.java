@@ -3,18 +3,15 @@ package com.joaob.emergencyinbabel.ui.viewmodel;
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import com.joaob.emergencyinbabel.data.repository.Repository;
+import com.joaob.emergencyinbabel.data.repository.CountryLanguageRepository;
 
 public class HomeViewModel extends AndroidViewModel {
-    private MutableLiveData<String> mText;
-    private Repository repository;
+    private CountryLanguageRepository repository;
 
     public HomeViewModel(Application app) {
         super(app);
-        repository = Repository.getInstance(app);
+        repository = CountryLanguageRepository.getInstance(app);
     }
 }

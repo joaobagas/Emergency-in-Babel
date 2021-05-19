@@ -5,16 +5,16 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 
 import com.joaob.emergencyinbabel.data.domain.Language;
-import com.joaob.emergencyinbabel.data.repository.Repository;
+import com.joaob.emergencyinbabel.data.repository.CountryLanguageRepository;
 
 import java.util.ArrayList;
 
 public class CountrySelectedViewModel extends AndroidViewModel {
-    private Repository repository;
+    private CountryLanguageRepository repository;
 
     public CountrySelectedViewModel(Application app) {
         super(app);
-        repository = Repository.getInstance(app);
+        repository = CountryLanguageRepository.getInstance(app);
     }
 
     public ArrayList<Language> getLanguages(String countryID) {

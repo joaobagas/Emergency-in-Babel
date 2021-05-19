@@ -30,9 +30,9 @@ public class PhraseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_phrase);
 
         Bundle bundle = new Bundle();
-
+        String languageID = (String) bundle.get("languageID");
         phrases = new ArrayList<>();
-        phrases.add(new Phrase("pt", "Help", bundle.getString("languageID")));
+        phrases = phraseViewModel.getPhrases(languageID);
 
         phraseRecyclerView = (RecyclerView) findViewById(R.id.phrase_rv);
         phraseRecyclerView.hasFixedSize();
