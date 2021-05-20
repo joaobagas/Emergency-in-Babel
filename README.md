@@ -8,11 +8,11 @@ The application accomplishes this by allowing people to select the language they
 
  1. Must have:
  
-    - [X] The official languages of every country in the European Union.
+    - [X] The official languages of every country in the European Union. (Delivered)
  
-    - [X] A way of selecting the country.
+    - [X] A way of selecting the country. (Delivered)
  
-    - [X] A list with all the languages in the database.
+    - [X] A list with all the languages in the database. (Delivered)
   
  2. Should have:
  
