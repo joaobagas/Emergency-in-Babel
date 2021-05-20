@@ -34,5 +34,5 @@ Having been in complicated situations in foreign countries where I did not speak
     - Non-official languages (such as Mirandese in Portugal).
 
 **Link to youtube video:**
-
-    - https://youtu.be/263YmaInM88
+ 
+https://youtu.be/263YmaInM88
