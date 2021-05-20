@@ -3,5 +3,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Countries</string>
     <string name="title_notifications">Languages</string>
-    <string name="locationGuessPhrase">Welcome to Emergency in Babel</string>
+    <string name="WelcomePhrase">Welcome to Emergency in Babel</string>
+    <string name="Version">Version: 1.0.0\n(Bare in mind this application is still under development.)</string>
 </resources>

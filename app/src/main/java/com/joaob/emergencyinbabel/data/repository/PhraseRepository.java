@@ -50,13 +50,13 @@ public class PhraseRepository {
         call.enqueue(new Callback<List<Phrase>>() {
             @Override
             public void onResponse(Call<List<Phrase>> call, Response<List<Phrase>> response) {
-                if (response.code() == 200) {
+                if(response.code() == 200) {
                     phrases.postValue(response.body());
-                    if (phrases.getValue() != null) {
+                    if(phrases.getValue() != null) {
                         ArrayList<Phrase> phrasesTemp = (ArrayList<Phrase>) phrases.getValue();
                         ArrayList<Phrase> returnablePhrases = new ArrayList<>();
-                        for (int i = 0; i < phrasesTemp.size(); i++) {
-                            if (phrasesTemp.get(i).getLanguageID().equals(languageID)) {
+                        for(int i = 0; i < phrasesTemp.size(); i++) {
+                            if(phrasesTemp.get(i).getLanguageID().equals(languageID)) {
                                 returnablePhrases.add(phrasesTemp.get(i));
                             }
                         }
