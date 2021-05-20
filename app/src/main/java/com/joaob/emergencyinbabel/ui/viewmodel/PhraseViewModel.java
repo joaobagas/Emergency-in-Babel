@@ -31,9 +31,7 @@ public class PhraseViewModel extends AndroidViewModel {
         return repository.getPhraseListObserver();
     }
 
-    public void updatePhrases() {
-        repository.updatePhrases("bu");
+    public void updatePhrases(String languageID) {
+        repository.updatePhrases(languageID);
     }
-
-
 }

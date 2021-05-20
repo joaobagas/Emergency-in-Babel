@@ -39,10 +39,8 @@ public class PhraseActivity extends AppCompatActivity {
         phraseRecyclerView = (RecyclerView) findViewById(R.id.phrase_rv);
         phraseRecyclerView.hasFixedSize();
         phraseRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        //phraseListAdapter = new PhraseListAdapter(phrases);
-        //phraseRecyclerView.setAdapter(phraseListAdapter);
 
         phraseViewModel.setRecyclerView(phraseRecyclerView, phraseListAdapter);
-        phraseViewModel.updatePhrases();
+        phraseViewModel.updatePhrases(languageID);
     }
 }
