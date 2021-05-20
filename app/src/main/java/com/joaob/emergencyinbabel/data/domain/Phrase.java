@@ -5,7 +5,6 @@ public class Phrase {
     private String phraseInEnglish;
     private String translatedPhrase;
 
-    public Phrase() {}
     public Phrase(String languageID, String phraseInEnglish, String translatedPhrase) {
         this.languageID = languageID;
         this.phraseInEnglish = phraseInEnglish;

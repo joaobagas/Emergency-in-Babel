@@ -12,11 +12,12 @@ import com.joaob.emergencyinbabel.R;
 import com.joaob.emergencyinbabel.data.domain.Phrase;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PhraseListAdapter extends RecyclerView.Adapter<PhraseListAdapter.PhraseListViewHolder> {
-    private ArrayList<Phrase> phrases;
+    private List<Phrase> phrases;
 
-    public PhraseListAdapter(ArrayList<Phrase> phrases) { this.phrases = phrases; }
+    public PhraseListAdapter(List<Phrase> phrases) { this.phrases = phrases; }
 
     @NonNull
     @Override

@@ -5,9 +5,11 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.joaob.emergencyinbabel.data.domain.Phrase;
 import com.joaob.emergencyinbabel.data.repository.PhraseRepository;
+import com.joaob.emergencyinbabel.ui.list.PhraseListAdapter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,11 +23,17 @@ public class PhraseViewModel extends AndroidViewModel {
         repository = PhraseRepository.getInstance(app);
     }
 
-    public LiveData<List<Phrase>> getPhrases(String languageID) {
-        return repository.getPhrases(languageID);
+    public void setRecyclerView (RecyclerView phraseRecyclerView, PhraseListAdapter phraseListAdapter) {
+        repository.setRecyclerView (phraseRecyclerView, phraseListAdapter);
     }
 
-    public void updatePhraseList() {
+    public MutableLiveData<List<Phrase>> getPhraseListObserver(String languageID) {
+        return repository.getPhraseListObserver();
+    }
+
+    public void updatePhrases() {
         repository.updatePhrases("bu");
     }
+
+
 }
