@@ -9,30 +9,35 @@ Having been in complicated situations in foreign countries where I did not speak
 
  1. Must have:
  
-    - [X] The official languages of every country in the European Union.
+    - [ ] The official languages of every country in the European Union.
  
-    - [X] A way of selecting the country.
+    - [ ] A way of selecting the country.
  
-    - [X] A list with all the languages in the database.
+    - [ ] A list with all the languages in the database.
   
  2. Should have:
  
-    - [ ] A map to easily select the country. (Was not delivered)
+    - [ ] A map to easily select the country.
   
-    - [ ] A way for the community to contribute. (Was not delivered)
+    - [ ] A way for the community to contribute.
   
  3. Could have:
  
-    - [ ] Recordings of native speakers to solve problems with pronunciation. (Was not delivered)
+    - [ ] Recordings of native speakers to solve problems with pronunciation.
+ 
+    - [ ] All the countries in the European continent.
   
-    - [ ] A favourite button for certain sentences or languages. (Was not delivered)
+    - [ ] A favourite button for certain sentences or languages.
   
  4. Will not have:
  
     - More continents for now.
   
     - Non-official languages (such as Mirandese in Portugal).
+<<<<<<< HEAD
 
 **Link to youtube video:**
  
 https://youtu.be/263YmaInM88
+=======
+>>>>>>> parent of a3b8236 (Update README.md)
