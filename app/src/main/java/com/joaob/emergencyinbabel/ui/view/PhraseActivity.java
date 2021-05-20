@@ -1,6 +1,8 @@
 package com.joaob.emergencyinbabel.ui.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,12 +18,13 @@ import com.joaob.emergencyinbabel.ui.viewmodel.LanguagesViewModel;
 import com.joaob.emergencyinbabel.ui.viewmodel.PhraseViewModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PhraseActivity extends AppCompatActivity {
     private PhraseViewModel phraseViewModel;
     private RecyclerView phraseRecyclerView;
     private PhraseListAdapter phraseListAdapter;
-    private ArrayList<Phrase> phrases;
+    private MutableLiveData<List<Phrase>> phrases = new MutableLiveData<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +34,14 @@ public class PhraseActivity extends AppCompatActivity {
 
         Bundle bundle = new Bundle();
         String languageID = (String) bundle.get("languageID");
-        phrases = new ArrayList<>();
-        phrases = phraseViewModel.getPhrases(languageID);
+        phraseViewModel.updatePhraseList();
+        phrases.postValue(phraseViewModel.getPhrases(languageID).getValue());
+
 
         phraseRecyclerView = (RecyclerView) findViewById(R.id.phrase_rv);
         phraseRecyclerView.hasFixedSize();
         phraseRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        phraseListAdapter = new PhraseListAdapter(phrases);
+        phraseListAdapter = new PhraseListAdapter((ArrayList<Phrase>) phrases.getValue());
         phraseRecyclerView.setAdapter(phraseListAdapter);
     }
 }
